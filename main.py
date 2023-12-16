@@ -9,4 +9,3 @@ if __name__ == "__main__":
         else:
             post_tweet(tweet_text)
             break
-    print("all 10 tweets failed")
