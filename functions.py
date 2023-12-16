@@ -27,6 +27,14 @@ def get_tweet_text():
     api_url = 'https://api.api-ninjas.com/v1/quotes'
     response = requests.get(api_url, headers={'X-Api-Key': API_NINJAS_KEY})
     if response.status_code == requests.codes.ok:
-        return(response.text)
+        # Parse the JSON string
+        data = json.loads(response.text)
+
+        quote = data[0]["quote"]
+        author = data[0]["author"]
+        category = data[0]["category"]
+
+        output_text = f"\"{quote}\"\n\n{author}"
+        return output_text
     else:
         print("Error:", response.status_code, response.text)
