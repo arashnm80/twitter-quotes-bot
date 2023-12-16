@@ -1,4 +1,4 @@
-name: tweet crypto prices
+name: tweet quote
 
 on:
   workflow_dispatch:
