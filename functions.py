@@ -20,11 +20,13 @@ def post_tweet(tweet_text):
     print(f"https://twitter.com/user/status/{response.data['id']}")
 
 def get_tweet_text():
-    # # if we need to specify category:
-    # category = 'happiness'
-    # api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
+    # if we need to specify category:
+    category = 'success'
+    api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
+
+    # # without category
+    # api_url = 'https://api.api-ninjas.com/v1/quotes'
     
-    api_url = 'https://api.api-ninjas.com/v1/quotes'
     response = requests.get(api_url, headers={'X-Api-Key': API_NINJAS_KEY})
     if response.status_code == requests.codes.ok:
         # Parse the JSON string
